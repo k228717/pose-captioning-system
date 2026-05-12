@@ -4,7 +4,7 @@ python-multipart
 streamlit
 streamlit-webrtc
 opencv-python-headless
-mediapipe
+mediapipe==0.10.14
 torch
 transformers
 sentencepiece
