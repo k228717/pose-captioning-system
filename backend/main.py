@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 from pathlib import Path
 
-from backend.pose_pipeline import run_pipeline
+
 
 app = FastAPI(title="Pose Captioning API")
 
@@ -29,6 +29,7 @@ def home():
 @app.post("/predict")
 async def predict_pose_caption(file: UploadFile = File(...)):
     try:
+        from backend.pose_pipeline import run_pipeline
 
         file_path = UPLOAD_DIR / file.filename
 
@@ -42,7 +43,7 @@ async def predict_pose_caption(file: UploadFile = File(...)):
         }
 
     except Exception as e:
-
         return {
-            "caption": "Pose could not be detected clearly. Please use a clear full-body image."
+            "caption": "Pose could not be detected clearly. Please use a clear full-body image.",
+            "error": str(e)
         }
