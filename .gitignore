@@ -1,0 +1,15 @@
+venv/
+.env
+__pycache__/
+*.pyc
+backend/uploads/
+*.csv
+*.txt
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.avif
+checkpoints_improved/
+checkpoints/
+*.pt
