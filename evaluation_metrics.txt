@@ -1,0 +1,9 @@
+FINAL MODEL EVALUATION
+======================
+Model Path: checkpoints_improved/best_model.pt
+Dataset: final_training_normalized.csv
+Total Dataset Rows: 39954
+Evaluated Samples for BLEU: 500
+
+Average Loss: 0.9138
+Average BLEU Score: 0.0836

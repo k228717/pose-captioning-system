@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+streamlit
+streamlit-webrtc
+opencv-python-headless
+mediapipe
+torch
+transformers
+sentencepiece
+numpy
+pillow
+requests
+openai
+python-dotenv
+av
