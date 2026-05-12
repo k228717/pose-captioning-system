@@ -128,15 +128,24 @@ div.stButton > button:hover {
 
 
 def call_backend_with_image(image_path):
-    with open(image_path, "rb") as file:
-        files = {"file": file}
-        response = requests.post(BACKEND_URL, files=files, timeout=120)
+    try:
+        st.write("Backend URL:", BACKEND_URL)
 
-    if response.status_code != 200:
-        return "Backend error occurred. Please check if FastAPI server is running."
+        with open(image_path, "rb") as file:
+            files = {"file": file}
+            response = requests.post(BACKEND_URL, files=files, timeout=120)
 
-    data = response.json()
-    return data.get("caption", "No caption generated.")
+        st.write("Status Code:", response.status_code)
+        st.write("Response Text:", response.text)
+
+        if response.status_code != 200:
+            return "Backend returned an error. See status code and response text above."
+
+        data = response.json()
+        return data.get("caption", data.get("generated_caption", str(data)))
+
+    except Exception as e:
+        return f"Frontend error: {str(e)}"
 
 
 def draw_pose_on_image(image_bgr):
