@@ -8,7 +8,7 @@ from PIL import Image
 import numpy as np
 import os
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000/predict")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://pose-captioning-system.onrender.com/predict")
 
 
 
